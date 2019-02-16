@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 
-namespace ConsolePractise1 {
+namespace ConsolePractise {
     class Program {
         static void Main(string[] args) {
             setTitle();
             Console.WriteLine("Hello，今天我来教你念句诗。\n\n");
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
 
             Console.Write("苟");
             Thread.Sleep(500);
@@ -45,7 +45,7 @@ namespace ConsolePractise1 {
             Thread.Sleep(500);
 
             Console.WriteLine("\n\n你学会了吗？");
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
             Console.WriteLine("\n点击键盘任意键结束。");
             Console.ReadKey(true);
         }
