@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculateDays", "CalculateDays\CalculateDays.csproj", "{0A13FCD9-50A4-4348-B56D-0FFC2CD02BF9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetDaysBetweenTwoDays", "GetDaysBetweenTwoDays\GetDaysBetweenTwoDays.csproj", "{45501C18-22BB-46F8-9E6D-17C5B52FB642}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0A13FCD9-50A4-4348-B56D-0FFC2CD02BF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A13FCD9-50A4-4348-B56D-0FFC2CD02BF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A13FCD9-50A4-4348-B56D-0FFC2CD02BF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45501C18-22BB-46F8-9E6D-17C5B52FB642}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45501C18-22BB-46F8-9E6D-17C5B52FB642}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45501C18-22BB-46F8-9E6D-17C5B52FB642}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45501C18-22BB-46F8-9E6D-17C5B52FB642}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
