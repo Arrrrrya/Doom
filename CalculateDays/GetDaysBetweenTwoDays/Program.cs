@@ -21,14 +21,23 @@ namespace GetDaysBetweenTwoDays {
 
             //计算结果
             int days = GetDays.CalculateDaysOfTwoDate(d1, d2);
+            String str = "{0}年{1}月{2}日到{3}年{4}月{5}日共有天数为：{6}";
+            str = String.Format(str, d1.Year, d1.Month, d1.Day, d2.Year, d2.Month, d2.Day, days);
+            Console.WriteLine(str);
 
-            String str = "{0}年{1}月{2}日到{3}年{4}月{5}日共有天数为：";
-            str = String.Format(str, d1.Year, d1.Month, d1.Day, d2.Year, d2.Month, d2.Day);
-            Console.WriteLine(str + days);
+            //使用系统自带方法
+            Console.WriteLine("系统算法得出结果为：" + testDateTime());
 
             //点击任意键结束
-            Console.WriteLine("点击任意键结束...");
+            Console.WriteLine("\n点击任意键结束...");
             Console.ReadKey(true);
+        }
+
+        static double testDateTime() {
+            DateTime d1 = new DateTime(1999, 5, 10);
+            DateTime d2 = new DateTime(2006, 3, 8);
+            double days = (d2 - d1).TotalDays;
+            return days;
         }
     }
 }
