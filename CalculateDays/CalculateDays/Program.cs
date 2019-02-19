@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 /// <summary>
-/// title:计算两个固定日期间的天数
+/// title:计算两个指定日期间的天数
 /// author:syl
 /// </summary>
 namespace CalculateDays {
@@ -36,7 +36,7 @@ namespace CalculateDays {
             Console.ReadKey(true);
         }
 
-        //计算两个日期之间的整天数
+        //计算两个指定日期间的天数
         static int CalculateDaysOfTwoDate(MyDate beginDate, MyDate endDate) {
             int days = 0;
             days = CalculateDaysOfTwoYear(beginDate.Year, endDate.Year);
@@ -48,7 +48,7 @@ namespace CalculateDays {
             return days;
         }
 
-        //计算两年之间的整年天数，不足一年的去掉
+        //计算两个年份之间的整年天数，不足一年的去掉
         static int CalculateDaysOfTwoYear(int beginYear, int endYear) {
             int days = 0;
             for(int i = beginYear + 1; i < endYear; i++) {
@@ -61,7 +61,7 @@ namespace CalculateDays {
             return days;
         }
 
-        //根据两个日期，计算出这两个日期之间的天数
+        //计算起始日期那一年和结束日期那一年的天数
         static int CalculateDaysOfTwoMonth(MyDate beginDate, MyDate endDate, bool IsInOneYear) {
             int beginDays = 0;
             int endDays = 0;
