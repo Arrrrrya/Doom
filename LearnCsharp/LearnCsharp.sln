@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionDemo", "FunctionDem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShowPicDemo", "ShowPicDemo\ShowPicDemo.csproj", "{11F033F4-AE03-4E75-AF55-92088F440519}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecursiveDemo", "RecursiveDemo\RecursiveDemo.csproj", "{DC8AAE95-96A8-4A2E-81BE-5DEB4DB0BF17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{11F033F4-AE03-4E75-AF55-92088F440519}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11F033F4-AE03-4E75-AF55-92088F440519}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11F033F4-AE03-4E75-AF55-92088F440519}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC8AAE95-96A8-4A2E-81BE-5DEB4DB0BF17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC8AAE95-96A8-4A2E-81BE-5DEB4DB0BF17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC8AAE95-96A8-4A2E-81BE-5DEB4DB0BF17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC8AAE95-96A8-4A2E-81BE-5DEB4DB0BF17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
