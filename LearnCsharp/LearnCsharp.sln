@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForeachDemo", "ForeachDemo\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetKeyBoardInfoDemo", "GetKeyBoardInfoDemo\GetKeyBoardInfoDemo.csproj", "{7EB5BFD4-CDC7-46A4-9B11-582573E8BF9A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionDemo", "FunctionDemo\FunctionDemo.csproj", "{74D45A4E-6463-42A1-8CF6-C07405EE3918}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShowPicDemo", "ShowPicDemo\ShowPicDemo.csproj", "{11F033F4-AE03-4E75-AF55-92088F440519}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{7EB5BFD4-CDC7-46A4-9B11-582573E8BF9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EB5BFD4-CDC7-46A4-9B11-582573E8BF9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EB5BFD4-CDC7-46A4-9B11-582573E8BF9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74D45A4E-6463-42A1-8CF6-C07405EE3918}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74D45A4E-6463-42A1-8CF6-C07405EE3918}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74D45A4E-6463-42A1-8CF6-C07405EE3918}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74D45A4E-6463-42A1-8CF6-C07405EE3918}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11F033F4-AE03-4E75-AF55-92088F440519}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11F033F4-AE03-4E75-AF55-92088F440519}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11F033F4-AE03-4E75-AF55-92088F440519}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11F033F4-AE03-4E75-AF55-92088F440519}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
