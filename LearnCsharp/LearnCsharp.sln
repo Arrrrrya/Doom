@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecursiveDemo", "RecursiveD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigIntDemo", "BigIntDemo\BigIntDemo.csproj", "{583B2113-F077-43B5-A430-8CF9CF965BCC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimerDemo", "TimerDemo\TimerDemo.csproj", "{1648620F-9846-4CED-8B63-485EF77D81AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{583B2113-F077-43B5-A430-8CF9CF965BCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{583B2113-F077-43B5-A430-8CF9CF965BCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{583B2113-F077-43B5-A430-8CF9CF965BCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1648620F-9846-4CED-8B63-485EF77D81AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1648620F-9846-4CED-8B63-485EF77D81AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1648620F-9846-4CED-8B63-485EF77D81AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1648620F-9846-4CED-8B63-485EF77D81AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
