@@ -63,7 +63,7 @@
             this.btnFlowLayOut.TabIndex = 0;
             this.btnFlowLayOut.Text = "FlowLayoutPanel";
             this.btnFlowLayOut.UseVisualStyleBackColor = true;
-            this.btnFlowLayOut.Click += new System.EventHandler(this.button1_Click);
+            this.btnFlowLayOut.Click += new System.EventHandler(this.btnFlowLayOut_Click);
             // 
             // splitContainer2
             // 

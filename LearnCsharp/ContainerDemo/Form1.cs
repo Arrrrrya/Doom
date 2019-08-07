@@ -13,7 +13,7 @@ namespace ContainerDemo {
         public Form1() {
             InitializeComponent();
         }
-        private void button1_Click(object sender, EventArgs e) {
+        private void btnFlowLayOut_Click(object sender, EventArgs e) {
             Form2 f2 = new Form2();
             f2.Show();
         }
