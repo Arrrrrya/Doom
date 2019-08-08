@@ -9,11 +9,17 @@ namespace CSharpClassDemo {
         static void Main(string[] args) {
             MyClass myClass = new MyClass();
             myClass.Age = -1;
-            //myClass.age = 2;
+            myClass.age = 2;
             Console.WriteLine(myClass.Age);
+            
+            MyClass definedMyClass = new MyClass() {
+                age = 100
+            };
 
+            Console.WriteLine(definedMyClass.age);
 
-
+            myClass.doPrint();
+            
             Console.ReadKey();
         }
     }

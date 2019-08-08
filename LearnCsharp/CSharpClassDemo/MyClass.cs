@@ -5,9 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CSharpClassDemo {
-    class MyClass {
-        public string name = "name0";
+    partial class MyClass {
+        private string name = "name0";
         public int age = 0;
+
+        partial void printHello();
+
+        public void doPrint() {
+            printHello();
+        }
 
         public string Name {
             get {
