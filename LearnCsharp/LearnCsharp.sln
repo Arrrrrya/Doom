@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimerDemo", "TimerDemo\Time
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContainerDemo", "ContainerDemo\ContainerDemo.csproj", "{18728464-C061-4640-8F5C-392B5112EC2E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpClassDemo", "CSharpClassDemo\CSharpClassDemo.csproj", "{3E5F4808-0BDB-4499-B207-F71EC50EF3B0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{18728464-C061-4640-8F5C-392B5112EC2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18728464-C061-4640-8F5C-392B5112EC2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18728464-C061-4640-8F5C-392B5112EC2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E5F4808-0BDB-4499-B207-F71EC50EF3B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E5F4808-0BDB-4499-B207-F71EC50EF3B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E5F4808-0BDB-4499-B207-F71EC50EF3B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E5F4808-0BDB-4499-B207-F71EC50EF3B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
