@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CSharpClassDemo;
+using CSharpClassDemo.InnerNameSpace;
 
 namespace CSharpClassDemo {
     class Program {
@@ -19,7 +21,14 @@ namespace CSharpClassDemo {
             Console.WriteLine(definedMyClass.age);
 
             myClass.doPrint();
-            
+
+            NameSpaceDemo demo = new NameSpaceDemo();
+            demo.doSth();
+
+            InnerClassDemo inDemo = new InnerClassDemo();
+            inDemo.doSth();
+
+
             Console.ReadKey();
         }
     }
