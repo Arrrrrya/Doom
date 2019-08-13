@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadOnlyDemo", "ReadOnlyDem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayDemo", "ArrayDemo\ArrayDemo.csproj", "{2F759964-BCD9-4B09-932D-2BAEB9FE3D14}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InheritsDemo", "InheritsDemo\InheritsDemo.csproj", "{758C0CD2-86FD-42E7-8217-6E1E57447792}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{2F759964-BCD9-4B09-932D-2BAEB9FE3D14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F759964-BCD9-4B09-932D-2BAEB9FE3D14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F759964-BCD9-4B09-932D-2BAEB9FE3D14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{758C0CD2-86FD-42E7-8217-6E1E57447792}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{758C0CD2-86FD-42E7-8217-6E1E57447792}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{758C0CD2-86FD-42E7-8217-6E1E57447792}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{758C0CD2-86FD-42E7-8217-6E1E57447792}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
