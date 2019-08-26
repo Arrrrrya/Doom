@@ -37,6 +37,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InheritsDemo", "InheritsDem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OverloadDemo", "OverloadDemo\OverloadDemo.csproj", "{567E06DD-AACB-4D3F-BE5C-0E64849719C0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "abstractDemo", "abstractDemo\abstractDemo.csproj", "{879DCF54-2888-4472-A474-9787DAD22B37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceDemo", "InterfaceDemo\InterfaceDemo.csproj", "{6499B658-4820-4B11-BD56-9EF661522EE2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +115,14 @@ Global
 		{567E06DD-AACB-4D3F-BE5C-0E64849719C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{567E06DD-AACB-4D3F-BE5C-0E64849719C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{567E06DD-AACB-4D3F-BE5C-0E64849719C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{879DCF54-2888-4472-A474-9787DAD22B37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{879DCF54-2888-4472-A474-9787DAD22B37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{879DCF54-2888-4472-A474-9787DAD22B37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{879DCF54-2888-4472-A474-9787DAD22B37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6499B658-4820-4B11-BD56-9EF661522EE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6499B658-4820-4B11-BD56-9EF661522EE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6499B658-4820-4B11-BD56-9EF661522EE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6499B658-4820-4B11-BD56-9EF661522EE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
