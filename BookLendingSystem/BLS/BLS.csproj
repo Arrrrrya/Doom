@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6D3C69FF-999F-47BA-8B3B-B4962EC25281}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BLS</RootNamespace>
+    <AssemblyName>BLS</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin_lendBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_lendBook.Designer.cs">
+      <DependentUpon>Admin_lendBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visitor_addApply.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visitor_addApply.Designer.cs">
+      <DependentUpon>Visitor_addApply.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_updateBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_updateBook.Designer.cs">
+      <DependentUpon>Admin_updateBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_addBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_addBook.Designer.cs">
+      <DependentUpon>Admin_addBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_addUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_addUser.Designer.cs">
+      <DependentUpon>Admin_addUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common.cs" />
+    <Compile Include="dao\ApplyDao.cs" />
+    <Compile Include="dao\ApplyDaoImpl.cs" />
+    <Compile Include="dao\BookDao.cs" />
+    <Compile Include="dao\BookDaoImpl.cs" />
+    <Compile Include="dao\LendDao.cs" />
+    <Compile Include="dao\LendDaoImpl.cs" />
+    <Compile Include="dao\UserDaoImpl.cs" />
+    <Compile Include="dao\UserDao.cs" />
+    <Compile Include="Admin_updateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_updateUser.Designer.cs">
+      <DependentUpon>Admin_updateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForm_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForm_Admin.Designer.cs">
+      <DependentUpon>MenuForm_Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForm_Visitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForm_Visitor.Designer.cs">
+      <DependentUpon>MenuForm_Visitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuForm_User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForm_User.Designer.cs">
+      <DependentUpon>MenuForm_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="model\Apply.cs" />
+    <Compile Include="model\Book.cs" />
+    <Compile Include="model\Lend.cs" />
+    <Compile Include="model\User.cs" />
+    <Compile Include="service\ApplyService.cs" />
+    <Compile Include="service\ApplyServiceImpl.cs" />
+    <Compile Include="service\BookService.cs" />
+    <Compile Include="service\BookServiceImpl.cs" />
+    <Compile Include="service\LendService.cs" />
+    <Compile Include="service\LendServiceImpl.cs" />
+    <Compile Include="service\UserServiceImpl.cs" />
+    <Compile Include="service\UserService.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin_lendBook.resx">
+      <DependentUpon>Admin_lendBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visitor_addApply.resx">
+      <DependentUpon>Visitor_addApply.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_updateBook.resx">
+      <DependentUpon>Admin_updateBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_addBook.resx">
+      <DependentUpon>Admin_addBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_addUser.resx">
+      <DependentUpon>Admin_addUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_updateUser.resx">
+      <DependentUpon>Admin_updateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForm_Admin.resx">
+      <DependentUpon>MenuForm_Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForm_Visitor.resx">
+      <DependentUpon>MenuForm_Visitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuForm_User.resx">
+      <DependentUpon>MenuForm_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MySDK\MySDK.csproj">
+      <Project>{d320e6b9-a367-4298-a001-2363e9d63638}</Project>
+      <Name>MySDK</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
