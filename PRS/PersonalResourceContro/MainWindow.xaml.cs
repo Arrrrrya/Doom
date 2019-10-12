@@ -1,4 +1,7 @@
-﻿using System;
+﻿using MySDK;
+using PersonalResourceContro.Model;
+using PersonalResourceContro.Service;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows;
@@ -11,6 +14,7 @@ namespace PersonalResourceContro {
     /// MainWindow.xaml 的交互逻辑
     /// </summary>
     public partial class MainWindow : Window {
+        private MyFileInfoService myFileInfoService = new MyFileInfoServiceImpl();
         // 当前树的根节点
         TreeViewItem item = null;
         // 存放所有文件名,父目录名
@@ -100,6 +104,9 @@ namespace PersonalResourceContro {
 
             // 创建树结构
             CreateTreeView(txtPath.Text.Trim());
+
+            // 添加到数据库
+            addToDB();
         }
 
         /// <summary>
@@ -205,6 +212,26 @@ namespace PersonalResourceContro {
         private string getFileName(string path) {
             string[] fileNames = path.Split('\\');
             return fileNames[fileNames.Length - 1];
+        }
+
+        /// <summary>
+        /// 添加到数据库
+        /// </summary>
+        private void addToDB() {
+            string format = "00000;-#;(0)";
+            int count = 0;
+            string seq = "";
+            string file_name = "";
+            string file_parent_name = "";
+            string create_date = AutoCreateTool.getNowDate("yyyyMMdd");
+            MyFileInfo myFileInfo = null;
+            foreach(var file in files) {
+                seq = AutoCreateTool.getSeq() + (++count).ToString(format);
+                file_name = file.Key;
+                file_parent_name = file.Value;
+                myFileInfo = new MyFileInfo(seq, file_name, file_parent_name, create_date);
+                myFileInfoService.addMyFileInfo(myFileInfo);
+            }
         }
     }
 }

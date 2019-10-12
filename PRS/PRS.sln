@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalResourceContro", "PersonalResourceContro\PersonalResourceContro.csproj", "{DF7BE6EA-C358-46A7-BD59-B5F2881C63A4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PRS", "PersonalResourceContro\PRS.csproj", "{DF7BE6EA-C358-46A7-BD59-B5F2881C63A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySDK", "MySDK\MySDK.csproj", "{277EE5C2-5C43-4506-8848-97C50E888E9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{DF7BE6EA-C358-46A7-BD59-B5F2881C63A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF7BE6EA-C358-46A7-BD59-B5F2881C63A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF7BE6EA-C358-46A7-BD59-B5F2881C63A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{277EE5C2-5C43-4506-8848-97C50E888E9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{277EE5C2-5C43-4506-8848-97C50E888E9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{277EE5C2-5C43-4506-8848-97C50E888E9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{277EE5C2-5C43-4506-8848-97C50E888E9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
