@@ -1,0 +1,22 @@
+﻿<Window x:Class="DrawDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="418" Width="525">
+    <DockPanel LastChildFill="True">
+        <StackPanel MinWidth="100" DockPanel.Dock="Left">
+            <TextBlock HorizontalAlignment="Center">editing mode</TextBlock>
+            <Button x:Name="btnselection" Margin="5" Click="btnselection_Click">selection</Button>
+            <Button x:Name="btndraw" Margin="5" Click="btndraw_Click">draw</Button>
+            <Button x:Name="btnerase" Margin="5" Click="btnerase_Click">erase</Button>
+
+            <TextBlock HorizontalAlignment="Center">choss color:</TextBlock>
+            <Ellipse x:Name="rectred" Fill="Red" MinHeight="50" Margin="5" MouseDown="rectred_MouseDown"></Ellipse>
+            <Ellipse x:Name="rectgreen" Fill="Green" MinHeight="50" Margin="5" MouseDown="rectgreen_MouseDown"></Ellipse>
+            <Ellipse x:Name="rectblue" Fill="Blue" MinHeight="50" Margin="5" MouseDown="rectblue_MouseDown"></Ellipse>
+            <Ellipse x:Name="rectyellow" Fill="Yellow" MinHeight="50" Margin="5"></Ellipse>
+        </StackPanel>
+        <InkCanvas x:Name="inkcanvas1" EditingMode="Ink" ClipToBounds="True">
+
+        </InkCanvas>
+    </DockPanel>
+</Window>
