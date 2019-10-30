@@ -1,0 +1,27 @@
+﻿<Window x:Class="FontFamilyDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FontFamilyDemo"
+        mc:Ignorable="d"
+        Title="字体样式" WindowStartupLocation="CenterScreen" Height="400" Width="300" Loaded="win_LoadedEvent">
+    <Grid>
+        <Canvas Margin="0">
+            <Label Canvas.Left="10" Canvas.Top="14">选择字体</Label>
+            <ComboBox x:Name="cbo_Demo" Height="30" Width="100" Canvas.Left="10" Canvas.Top="50" SelectionChanged="cbo_Demo_SelectionChanged"/>
+            <TextBlock x:Name="textBlock1" Width="100" Height="20" Canvas.Left="140" Canvas.Top="50">
+                字体样式
+            </TextBlock>
+            <TextBlock x:Name="textBlock2" Width="100" Height="20" Canvas.Left="140" Canvas.Top="70">
+                font style
+            </TextBlock>
+            <TextBlock x:Name="textBlock3" Width="100" Height="20" Canvas.Left="140" Canvas.Top="90">
+                1234567890
+            </TextBlock>
+            <TextBlock x:Name="textBlock4" Width="100" Height="20" Canvas.Left="140" Canvas.Top="110">
+                ,.!@#$%^*()_+-=`~\|/{}[];
+            </TextBlock>
+        </Canvas>
+    </Grid>
+</Window>
