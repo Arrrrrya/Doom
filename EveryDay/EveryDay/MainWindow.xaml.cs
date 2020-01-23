@@ -1,18 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace EveryDay {
     /// <summary>
@@ -29,10 +19,17 @@ namespace EveryDay {
             user_name.Content = fileName != "" ? fileName.Split(' ')[1] : "用户名";
         }
 
-        #region 点击用户名的操作 未完成
+        #region 点击用户名的操作
         private void user_name_MouseLeftButtonUp(object sender, MouseButtonEventArgs e) {
             if(user_name.Content.ToString() != "用户名") {
-
+                if(what_i_write_today.Text != "") {
+                    MessageBoxResult result = MessageBox.Show("是否丢弃当前输入的内容？", "警告", MessageBoxButton.YesNo);
+                    if(result == MessageBoxResult.Yes) {
+                        what_i_write_today.Text = readFileContent(filePath, fileName);
+                    }
+                } else {
+                    what_i_write_today.Text = readFileContent(filePath, fileName);
+                }
             } else {
                 user_name.Visibility = Visibility.Collapsed;
                 name_canvas.Visibility = Visibility.Visible;
@@ -42,6 +39,10 @@ namespace EveryDay {
 
         #region 修改用户名的确认与取消
         private void name_confirm_Click(object sender, RoutedEventArgs e) {
+            if(name_textBox.Text == "用户名") {
+                MessageBox.Show("不能使用\"用户名\"作为用户名！");
+                return;
+            }
             MessageBoxResult result = MessageBox.Show("确定使用\"" + name_textBox.Text + "\"作为用户名吗？", "提示", MessageBoxButton.YesNo);
             if(result == MessageBoxResult.Yes) {
                 fileName = "everyday " + name_textBox.Text + " " + ".txt";
@@ -92,7 +93,7 @@ namespace EveryDay {
         #region 保存与清空操作
         private void btn_save_Click(object sender, RoutedEventArgs e) {
             if(what_i_write_today.Text != "") {
-                if(user_name.Content.ToString() =="用户名") {
+                if(user_name.Content.ToString() == "用户名") {
                     MessageBox.Show("请先设置用户名");
                     return;
                 }
@@ -105,7 +106,6 @@ namespace EveryDay {
                     } else {
                         MessageBox.Show("由于未知的原因，保存失败，请再次尝试保存。");
                     }
-
                 }
             }
         }
@@ -129,6 +129,12 @@ namespace EveryDay {
                 Console.WriteLine(e.Message);
                 return false;
             }
+        }
+        #endregion
+
+        #region 读取用户保存的历史内容
+        private string readFileContent(string filePath, string fileName) {
+            return File.ReadAllText(filePath + fileName);
         }
         #endregion
     }
