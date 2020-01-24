@@ -9,15 +9,27 @@ namespace EveryDay {
     /// MainWindow.xaml 的交互逻辑
     /// </summary>
     public partial class MainWindow : Window {
-        string filePath = "c:\\";
-        string fileName = "";
+        string filePath { get; set; } = "c:\\";
+        string fileName { get; set; } = "";
+        DateTime today { get; set; } = DateTime.Now;
+        string saying { get; set; } = "";
 
         public MainWindow() {
             InitializeComponent();
-            date_time.Content = DateTime.Now.ToString("yyyy-MM-dd");
+            show();
+        }
+
+        #region 显示日期、用户名及名言警句
+        private void show() {
+            date_time.Content = today.ToString("yyyy-MM-dd");
             fileName = findFile(filePath);
             user_name.Content = fileName != "" ? fileName.Split(' ')[1] : "用户名";
+
+            saying = Sayings.getASaying();
+            tip_content.Text = saying.Split('。')[0] + "。";
+            tip_author.Text = saying.Split('。')[1];
         }
+        #endregion
 
         #region 点击用户名的操作
         private void user_name_MouseLeftButtonUp(object sender, MouseButtonEventArgs e) {
@@ -78,7 +90,7 @@ namespace EveryDay {
         }
         #endregion
 
-        #region 登录时查找用户保存的记录
+        #region 启动时查找用户保存的记录文件
         private string findFile(string filePath) {
             DirectoryInfo di = new DirectoryInfo(filePath);
             foreach(FileInfo fi in di.GetFiles()) {
@@ -99,7 +111,7 @@ namespace EveryDay {
                 }
                 MessageBoxResult result = MessageBox.Show("是否要保存？", "提示", MessageBoxButton.YesNo);
                 if(result == MessageBoxResult.Yes) {
-                    string fileContent = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "\r\n" + what_i_write_today.Text;
+                    string fileContent = today.ToString("yyyy-MM-dd HH:mm:ss") + "\r\n" + what_i_write_today.Text;
                     if(writeToFile(filePath, fileName, fileContent)) {
                         MessageBox.Show("保存成功");
                         what_i_write_today.Text = "";

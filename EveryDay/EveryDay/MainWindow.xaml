@@ -21,10 +21,10 @@
                 <Border BorderBrush="Black">
                     <Canvas x:Name="tip_panel" MouseRightButtonUp="tip_panel_MouseRightButtonUp" MouseLeftButtonUp="tip_panel_MouseLeftButtonUp">
                         <Label x:Name="head_tip_content" HorizontalContentAlignment="Right" Canvas.Top="25">
-                            <TextBlock TextWrapping="Wrap" Width="290" Text="这个世界上，从来没有一个艺术家，一天二十四小时都是艺术家的。" FontFamily="楷体" HorizontalAlignment="Right"/>
+                            <TextBlock x:Name="tip_content" TextWrapping="Wrap" Width="290" Text="这个世界上，从来没有一个艺术家，一天二十四小时都是艺术家的。" FontFamily="楷体" HorizontalAlignment="Right"/>
                         </Label>
                         <Label x:Name="head_tip_author" Width="300" HorizontalContentAlignment="Right" Canvas.Top="45">
-                            <TextBlock TextWrapping="Wrap" Text="--尼古拉斯·凯奇" FontFamily="楷体" HorizontalAlignment="Right"/>
+                            <TextBlock x:Name="tip_author" TextWrapping="Wrap" Text="--尼古拉斯·凯奇" FontFamily="楷体" HorizontalAlignment="Right"/>
                         </Label>
                     </Canvas>
                 </Border>
