@@ -10,7 +10,7 @@ namespace WpfApplication1.Tests
         [TestMethod]
         public void Test()
         {
-            // Find the buttons by their names and click them in sequence to perform 1 + 7 = 8
+            // Find the buttons by their names and click them
             session.FindElementByAccessibilityId("button_Create").Click();
             Thread.Sleep(2000);
             session.FindElementByAccessibilityId("button_Copy").Click();
