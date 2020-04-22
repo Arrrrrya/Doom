@@ -34,6 +34,9 @@ namespace Server_Tcp
                     clientMsg.IsBackground = true;//设置为后台线程
                     clientMsg.Name = "clientMsg";//设置线程名字
                     clientMsg.Start(acceptSocket);
+                    
+                    acceptSocket.Send(Encoding.UTF8.GetBytes("hello 欢迎你"));
+                    Console.WriteLine("向客户端发送了一条数据");
                 }
             }
             catch (Exception)

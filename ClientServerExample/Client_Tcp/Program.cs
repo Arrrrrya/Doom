@@ -16,6 +16,12 @@ namespace Client_Tcp
             try
             {
                 clientSocket.Connect(serverEndPoiint);
+
+                // 接收服务端发来的消息
+                byte[] data = new byte[1024];
+                int length = clientSocket.Receive(data);
+                string message = Encoding.UTF8.GetString(data, 0, length);
+                Console.WriteLine(message);
             }
             catch (Exception)
             {
@@ -28,10 +34,8 @@ namespace Client_Tcp
                 while (true)
                 {//输入数据
                     string str = Console.ReadLine();
-                    //转换为字节
-                    byte[] byteArray = Encoding.UTF8.GetBytes(str);
-                    //发送数据
-                    clientSocket.Send(byteArray);
+                    //发送数据到服务端
+                    clientSocket.Send(Encoding.UTF8.GetBytes(str));
                     Console.WriteLine("我：" + str);
                 }
             }
