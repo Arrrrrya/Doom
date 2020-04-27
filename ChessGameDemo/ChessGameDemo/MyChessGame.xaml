@@ -5,18 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChessGameDemo"
         mc:Ignorable="d"
-        Title="五子棋大战" Height="700" Width="1000" ResizeMode="NoResize">
+        Title="五子棋大战" Height="700" Width="1000" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Viewbox>
         <Grid Height="700" Width="1000">
             <Canvas x:Name="tip_panel" Tag="提示区域" Background="LightCyan" Height="600" Width="300" Margin="650,0,0,0">
                 <TextBlock x:Name="rule_1" Text="游戏规则：" TextWrapping="Wrap" Canvas.Left="10" Canvas.Top="10"/>
                 <TextBlock x:Name="rule_2" Text="1.先手下棋则游戏开始。" TextWrapping="Wrap" Canvas.Left="37" Canvas.Top="30"/>
                 <TextBlock x:Name="rule_3" Text="2.落子无悔。" TextWrapping="Wrap" Canvas.Left="37" Canvas.Top="50"/>
-                <TextBlock x:Name="rule_4" Text="3.获胜则游戏结束。" TextWrapping="Wrap" Canvas.Left="37" Canvas.Top="70"/>
+                <TextBlock x:Name="rule_4" Text="3.一方获胜则游戏结束。" TextWrapping="Wrap" Canvas.Left="37" Canvas.Top="70"/>
 
                 <Button x:Name="btn_restart" Content="重新开始" FontSize="16" Canvas.Left="217" Canvas.Top="10" Width="73" Height="28" Click="btn_restart_Click"/>
 
-                <TextBlock Text="当前先手：" TextWrapping="Wrap" Canvas.Left="10" Canvas.Top="128"/>
+                <TextBlock Text="本局先手：" TextWrapping="Wrap" Canvas.Left="10" Canvas.Top="128"/>
                 <TextBlock x:Name="current_first" Text="〇×" TextWrapping="Wrap" Canvas.Left="37" Canvas.Top="148"/>
 
                 <TextBlock Text="当前轮次：" TextWrapping="Wrap" Canvas.Left="10" Canvas.Top="182"/>
@@ -32,430 +32,431 @@
                 <TextBlock x:Name="total_step_X" Text="101" TextWrapping="Wrap" Canvas.Left="192" Canvas.Top="222"/>
 
                 <TextBlock Text="上局棋盘：" TextWrapping="Wrap" Canvas.Left="10" Canvas.Top="276"/>
-                <TextBlock x:Name="last_winner" Text="〇 获胜" TextWrapping="Wrap" Canvas.Left="240" Canvas.Top="280"/>
-                <Canvas x:Name="end_pic" Height="250" Width="250" Margin="25,300,0,0"/>
+                <TextBlock x:Name="last_winner" Text="〇 获胜" TextWrapping="Wrap" Canvas.Left="84" Canvas.Top="276"/>
+                <TextBlock x:Name="last_winner_step" Text="步数" TextWrapping="Wrap" Canvas.Left="145" Canvas.Top="276"/>
+                <Canvas x:Name="end_pic" Background="Gray" Height="250" Width="250" Margin="25,320,0,0"/>
             </Canvas>
             <Canvas x:Name="chess_panel" Tag="棋盘" Background="LightGray" Height="600" Width="600" Margin="-300,0,0,0">
                 <WrapPanel x:Name="chess_border" Height="600" Width="600">
-                    <Canvas x:Name="canvas_1_1" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_1_2" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_1_3" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_1_4" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_1_5" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_1_6" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_1_7" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_1_8" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_1_9" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_1_10" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_1_11" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_1_12" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_1_13" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_1_14" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_1_15" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_1_16" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_1_17" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_1_18" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_1_19" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_1_20" Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
 
-                    <Canvas x:Name="canvas_2_1" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_2_2" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_2_3" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_2_4" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_2_5" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_2_6" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_2_7" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_2_8" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_2_9" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_2_10" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_2_11" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_2_12" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_2_13" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_2_14" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_2_15" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_2_16" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_2_17" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_2_18" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_2_19" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_2_20" Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
 
-                    <Canvas x:Name="canvas_3_1" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_3_2" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_3_3" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_3_4" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_3_5" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_3_6" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_3_7" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_3_8" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_3_9" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_3_10" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_3_11" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_3_12" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_3_13" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_3_14" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_3_15" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_3_16" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_3_17" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_3_18" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_3_19" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_3_20" Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
 
-                    <Canvas x:Name="canvas_4_1" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_4_2" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_4_3" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_4_4" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_4_5" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_4_6" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_4_7" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_4_8" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_4_9" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_4_10" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_4_11" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_4_12" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_4_13" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_4_14" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_4_15" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_4_16" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_4_17" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_4_18" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_4_19" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_4_20" Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
 
-                    <Canvas x:Name="canvas_5_1" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_5_2" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_5_3" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_5_4" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_5_5" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_5_6" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_5_7" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_5_8" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_5_9" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_5_10" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_5_11" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_5_12" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_5_13" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_5_14" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_5_15" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_5_16" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_5_17" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_5_18" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_5_19" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_5_20" Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
 
-                    <Canvas x:Name="canvas_6_1" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_6_2" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_6_3" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_6_4" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_6_5" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_6_6" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_6_7" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_6_8" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_6_9" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_6_10" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_6_11" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_6_12" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_6_13" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_6_14" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_6_15" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_6_16" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_6_17" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_6_18" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_6_19" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_6_20" Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
 
-                    <Canvas x:Name="canvas_7_1" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_7_2" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_7_3" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_7_4" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_7_5" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_7_6" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_7_7" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_7_8" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_7_9" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_7_10" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_7_11" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_7_12" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_7_13" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_7_14" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_7_15" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_7_16" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_7_17" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_7_18" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_7_19" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_7_20" Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
 
-                    <Canvas x:Name="canvas_8_1" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_8_2" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_8_3" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_8_4" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_8_5" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_8_6" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_8_7" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_8_8" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_8_9" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_8_10" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_8_11" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_8_12" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_8_13" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_8_14" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_8_15" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_8_16" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_8_17" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_8_18" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_8_19" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_8_20" Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
 
-                    <Canvas x:Name="canvas_9_1" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_9_2" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_9_3" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_9_4" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_9_5" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_9_6" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_9_7" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_9_8" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_9_9" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_9_10" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_9_11" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_9_12" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_9_13" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_9_14" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_9_15" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_9_16" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_9_17" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_9_18" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_9_19" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_9_20" Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
 
-                    <Canvas x:Name="canvas_10_1" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_10_2" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_10_3" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_10_4" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_10_5" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_10_6" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_10_7" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_10_8" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_10_9" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_10_10" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_10_11" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_10_12" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_10_13" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_10_14" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_10_15" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_10_16" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_10_17" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_10_18" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_10_19" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_10_20" Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
 
-                    <Canvas x:Name="canvas_11_1" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_11_2" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_11_3" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_11_4" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_11_5" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_11_6" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_11_7" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_11_8" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_11_9" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_11_10" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_11_11" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_11_12" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_11_13" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_11_14" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_11_15" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_11_16" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_11_17" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_11_18" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_11_19" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_11_20" Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
 
-                    <Canvas x:Name="canvas_12_1" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_12_2" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_12_3" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_12_4" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_12_5" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_12_6" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_12_7" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_12_8" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_12_9" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_12_10" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_12_11" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_12_12" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_12_13" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_12_14" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_12_15" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_12_16" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_12_17" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_12_18" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_12_19" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_12_20" Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
 
-                    <Canvas x:Name="canvas_13_1" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_13_2" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_13_3" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_13_4" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_13_5" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_13_6" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_13_7" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_13_8" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_13_9" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_13_10" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_13_11" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_13_12" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_13_13" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_13_14" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_13_15" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_13_16" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_13_17" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_13_18" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_13_19" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_13_20" Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
 
-                    <Canvas x:Name="canvas_14_1" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_14_2" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_14_3" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_14_4" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_14_5" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_14_6" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_14_7" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_14_8" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_14_9" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_14_10" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_14_11" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_14_12" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_14_13" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_14_14" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_14_15" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_14_16" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_14_17" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_14_18" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_14_19" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_14_20" Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
 
-                    <Canvas x:Name="canvas_15_1" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_15_2" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_15_3" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_15_4" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_15_5" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_15_6" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_15_7" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_15_8" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_15_9" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_15_10" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_15_11" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_15_12" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_15_13" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_15_14" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_15_15" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_15_16" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_15_17" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_15_18" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_15_19" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_15_20" Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
 
-                    <Canvas x:Name="canvas_16_1" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_16_2" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_16_3" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_16_4" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_16_5" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_16_6" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_16_7" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_16_8" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_16_9" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_16_10" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_16_11" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_16_12" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_16_13" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_16_14" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_16_15" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_16_16" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_16_17" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_16_18" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_16_19" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_16_20" Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
 
-                    <Canvas x:Name="canvas_17_1" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_17_2" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_17_3" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_17_4" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_17_5" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_17_6" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_17_7" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_17_8" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_17_9" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_17_10" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_17_11" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_17_12" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_17_13" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_17_14" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_17_15" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_17_16" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_17_17" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_17_18" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_17_19" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_17_20" Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
 
-                    <Canvas x:Name="canvas_18_1" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_18_2" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_18_3" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_18_4" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_18_5" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_18_6" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_18_7" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_18_8" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_18_9" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_18_10" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_18_11" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_18_12" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_18_13" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_18_14" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_18_15" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_18_16" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_18_17" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_18_18" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_18_19" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_18_20" Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
 
-                    <Canvas x:Name="canvas_19_1" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_19_2" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_19_3" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_19_4" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_19_5" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_19_6" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_19_7" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_19_8" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_19_9" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_19_10" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_19_11" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_19_12" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_19_13" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_19_14" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_19_15" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_19_16" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_19_17" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_19_18" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_19_19" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_19_20" Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
 
-                    <Canvas x:Name="canvas_20_1" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_20_2" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_20_3" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_20_4" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_20_5" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_20_6" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_20_7" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_20_8" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_20_9" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_20_10" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_20_11" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_20_12" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_20_13" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_20_14" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_20_15" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_20_16" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_20_17" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_20_18" Height="30" Width="30" Background="LightCyan"/>
-                    <Canvas x:Name="canvas_20_19" Height="30" Width="30" Background="LightGray"/>
-                    <Canvas x:Name="canvas_20_20" Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
+                    <Canvas Height="30" Width="30" Background="LightGray"/>
+                    <Canvas Height="30" Width="30" Background="LightCyan"/>
                 </WrapPanel>
             </Canvas>
         </Grid>
