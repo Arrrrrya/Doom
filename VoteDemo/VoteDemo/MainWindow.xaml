@@ -1,0 +1,24 @@
+﻿<Window x:Class="VoteDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VoteDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="19*"/>
+        </Grid.ColumnDefinitions>
+        <!--<Image HorizontalAlignment="Left" Height="192" Margin="92,56,0,0" VerticalAlignment="Top" Width="144" Source="001.jpg" Grid.ColumnSpan="2"/>
+        <Image HorizontalAlignment="Left" Height="192" Margin="160.915,56,0,0" VerticalAlignment="Top" Width="144" Source="002.jpg" Grid.Column="1"/>
+        <Image HorizontalAlignment="Left" Height="192" Margin="393.915,56,0,0" VerticalAlignment="Top" Width="144" Source="003.jpg" Grid.Column="1"/>-->
+        <Label x:Name="labelCounter1" Content="A" HorizontalAlignment="Left" Margin="144,268,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Label x:Name="labelCounter2" Content="B" HorizontalAlignment="Left" Margin="214.915,268,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label x:Name="labelCounter3" Content="C" HorizontalAlignment="Left" Margin="453.915,268,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Button x:Name="btnStartVote" Content="开启壹组投票" Click="btnStartVoteClick" HorizontalAlignment="Left" Margin="116,340,0,0" VerticalAlignment="Top" Width="75" Height="25" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnEndVote" Content="投票结束" Click="btnEndVoteClick" HorizontalAlignment="Left" Margin="426.915,340,0,0" VerticalAlignment="Top" Width="75" Height="25" Grid.Column="1"/>
+        <TextBox x:Name="voteCounterForm" HorizontalAlignment="Left" Height="25" Margin="53.915,340,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1"/>
+    </Grid>
+</Window>
