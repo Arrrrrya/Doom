@@ -8,12 +8,11 @@ namespace KMPDemo
     {
         static void Main(string[] args)
         {
-            string t = "dfgfdg";
-
+            string t = "abcd";
             StringBuilder ss = new StringBuilder();
-            for (int i = 0; i < 100000000; i++)
+            for (int i = 0; i < 40000000; i++)
             {
-                ss.Append("a");
+                ss.Append("abc");
             }
             ss.Append(t);
             Stopwatch sw = new Stopwatch();
@@ -34,18 +33,16 @@ namespace KMPDemo
 
         public static int findString(string s, string t)
         {
-            char[] s_arr = s.ToCharArray();
-            char[] t_arr = t.ToCharArray();
-            for (int i = 0; i < s_arr.Length; i++)
+            for (int i = 0; i < s.Length - t.Length + 1; i++)
             {
-                for (int j = 0; j < t_arr.Length; j++)
+                if (s.Substring(i, t.Length) == t)
                 {
-
+                    return i;
                 }
             }
             return -1;
         }
-        
+
         /**
          * 对主串s和模式串t进行KMP模式匹配
          * @param s 主串
@@ -66,12 +63,19 @@ namespace KMPDemo
                     j++;
                 }
                 else
+                {
                     j = next[j];
+                }
             }
             if (j == t_arr.Length)
+            {
                 return i - j;
+            }
             else
+            {
                 return -1;
+            }
+
         }
 
         /**
