@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="ThumbsDemo.ShowPics"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ThumbsDemo"
+             mc:Ignorable="d">
+    <Viewbox>
+        <Grid x:Name="mainGrid" Height="300" Width="300">
+            <StackPanel x:Name="mainPanel" Height="300" Width="300">
+                <Canvas x:Name="mainCanvas" Height="300" Width="300" Background="Transparent">
+                    <Image x:Name="icon_left" Height="20" Source="Resources\icons\icon_left.png" Canvas.Top="140" Canvas.Left="0"/>
+                    <Image x:Name="icon_right" Height="20" Source="Resources\icons\icon_right.png" Canvas.Top="140" Canvas.Right="0"/>
+                    <Image x:Name="icon_up" Width="20" Source="Resources\icons\icon_upper.png" Canvas.Left="140" Canvas.Top="0"/>
+                    <Image x:Name="icon_down" Width="20" Source="Resources\icons\icon_lower.png" Canvas.Left="140" Canvas.Bottom="0"/>
+                </Canvas>
+            </StackPanel>
+        </Grid>
+    </Viewbox>
+</UserControl>
