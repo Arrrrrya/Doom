@@ -57,12 +57,17 @@ namespace MyTimer
         private void Grid_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
         {
             int minute = 0;
-            try
+            //try
+            //{
+            //    minute = Convert.ToInt32(textBox.Text.Trim());
+            //}
+            //catch (Exception)
+            //{
+            //}
+            int result;
+            if (int.TryParse(textBox.Text.Trim(), out result))
             {
-                minute = Convert.ToInt32(textBox.Text.Trim());
-            }
-            catch (Exception)
-            {
+                minute = result;
             }
 
             if (!isRunning)
@@ -84,10 +89,12 @@ namespace MyTimer
                         setTimeContent(--seconds);
                         if (seconds == 0)
                         {
-                            if (MessageBox.Show("倒计时结束！") == MessageBoxResult.OK)
+                            if (myTimer != null)
                             {
-                                initialize();
+                                myTimer.Stop();
+                                myTimer = null;
                             }
+                            textBox.Text = "倒计时结束！";
                         }
                     };
                     myTimer.Start();
@@ -99,7 +106,10 @@ namespace MyTimer
             }
             else
             {
-                initialize();
+                if (MessageBox.Show("确定要重置倒计时吗?", "重置倒计时", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
+                {
+                    initialize();
+                }
             }
         }
     }
