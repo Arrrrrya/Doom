@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Windows;
-using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Threading;
 
 namespace MyTimer
 {
     /// <summary>
-    /// 看书and逗猫の倒计时小工具
+    /// 倒计时小工具
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -14,7 +14,9 @@ namespace MyTimer
         int seconds = 0;
         int minutes = 0;
         int hours = 0;
-        
+
+        bool isRunning = false;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -23,83 +25,82 @@ namespace MyTimer
 
         void initialize()
         {
-            comboBox.SelectedIndex = 0;
-            setIsEnable(true, true, false, false);
-            seconds = (comboBox.SelectedIndex + 1) * 30 * 60;
-            setLabelContent(seconds);
-        }
-
-        private void btnStart_Click(object sender, RoutedEventArgs e)
-        {
-            setIsEnable(false, false, true, true);
-            myTimer = new DispatcherTimer()
-            {
-                Interval = new TimeSpan(0, 0, 0, 1)
-            };
-            myTimer.Tick += (s, o) => {
-                seconds--;
-                setLabelContent(seconds);
-                if (seconds == 0)
-                {
-                    myTimer.Stop();
-                    if (MessageBox.Show("倒计时结束啦！喵！") == MessageBoxResult.OK)
-                    {
-                        initialize();
-                    }
-                }
-            };
-            myTimer.Start();
-
-        }
-
-        private void btnPause_Click(object sender, RoutedEventArgs e)
-        {
-            if(btnPause.Content.ToString() == "暂停")
+            if (myTimer != null)
             {
                 myTimer.Stop();
-                btnPause.Content = "继续";
+                myTimer = null;
             }
-            else
-            {
-                myTimer.Start();
-                btnPause.Content = "暂停";
-            }
-        }
-
-        private void btnReset_Click(object sender, RoutedEventArgs e)
-        {
-            myTimer.Stop();
-            initialize();
-        }
-
-        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (labelRestTime!=null)
-            {
-                seconds = (comboBox.SelectedIndex + 1) * 30 * 60;
-                setLabelContent(seconds);
-            }
-        }
-        
-        void setIsEnable(bool comboxFlag, bool btnFlag1,bool btnFlag2, bool btnFlag3)
-        {
-            comboBox.IsEnabled = comboxFlag;
-            btnStart.IsEnabled = btnFlag1;
-            btnPause.IsEnabled = btnFlag2;
-            btnReset.IsEnabled = btnFlag3;
+            textBox.Text = "0";
+            textBox.Width = 150;
+            textBox.IsReadOnly = false;
+            label.Visibility = Visibility.Visible;
+            isRunning = false;
         }
 
         // 00:00:00
-        void setLabelContent(int seconds)
+        void setTimeContent(int seconds)
         {
             minutes = seconds / 60;
             hours = minutes / 60;
             int second = seconds % 60;
+            textBox.Text = (hours < 10 ? ("0" + hours) : ("" + hours)) + ":" + (minutes % 60 < 10 ? ("0" + minutes % 60) : ("" + minutes % 60)) + ":" + (second % 60 < 10 ? "0" + second : second + "");
+        }
 
-            labelRestTime.Content = "0" + hours + ":" + ((minutes % 60 < 10) ?
-                "0" + minutes % 60 :
-                minutes % 60 + "") + ":" +
-                ((second % 60 < 10) ? "0" + second : second + "");
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                this.DragMove();
+            }
+        }
+
+        private void Grid_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            int minute = 0;
+            try
+            {
+                minute = Convert.ToInt32(textBox.Text.Trim());
+            }
+            catch (Exception)
+            {
+            }
+
+            if (!isRunning)
+            {
+                if (minute == 0 || minute > 999)
+                {
+                    MessageBox.Show("别闹，好好填时间！");
+                }
+                else
+                {
+                    seconds = minute * 60;
+                    setTimeContent(seconds);
+                    myTimer = new DispatcherTimer()
+                    {
+                        Interval = new TimeSpan(0, 0, 0, 1)
+                    };
+                    myTimer.Tick += (s, o) =>
+                    {
+                        setTimeContent(--seconds);
+                        if (seconds == 0)
+                        {
+                            if (MessageBox.Show("倒计时结束！") == MessageBoxResult.OK)
+                            {
+                                initialize();
+                            }
+                        }
+                    };
+                    myTimer.Start();
+                    textBox.Width = 250;
+                    textBox.IsReadOnly = true;
+                    label.Visibility = Visibility.Collapsed;
+                    isRunning = true;
+                }
+            }
+            else
+            {
+                initialize();
+            }
         }
     }
 }

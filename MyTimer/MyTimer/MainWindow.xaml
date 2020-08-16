@@ -5,22 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyTimer"
         mc:Ignorable="d"
-        Title="看书and逗猫の倒计时" Height="300" Width="400" WindowStartupLocation="CenterScreen">
-    <Grid>
-        <Canvas>
-            <Label x:Name="label" Content="倒计时:" Canvas.Left="85" Canvas.Top="44"/>
-            <ComboBox x:Name="comboBox" Canvas.Left="165" Canvas.Top="46" Width="120" SelectedIndex="0" SelectionChanged="comboBox_SelectionChanged">
-                <ComboBoxItem Content="30分钟"/>
-                <ComboBoxItem Content="60分钟"/>
-                <ComboBoxItem Content="90分钟"/>
-                <ComboBoxItem Content="120分钟"/>
-            </ComboBox>
-            <Label x:Name="labelRestTime" Content="00:00:00" FontSize="50" Canvas.Left="85" Canvas.Top="83"/>
-            <Button x:Name="btnStart" Content="开始" Canvas.Left="50" Canvas.Top="180" Width="75" Click="btnStart_Click"/>
-            <Button x:Name="btnPause" Content="暂停" Canvas.Left="150" Canvas.Top="180" Width="75" Click="btnPause_Click"/>
-            <Button x:Name="btnReset" Content="重置" Canvas.Left="250" Canvas.Top="180" Width="75" Click="btnReset_Click"/>
-
-
-        </Canvas>
+        Title="Yuri的倒计时" Height="82" Width="252" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen" Topmost="True">
+    <Grid Background="LightBlue" MouseDown="Grid_MouseDown" MouseRightButtonUp="Grid_MouseRightButtonUp">
+        <Border BorderThickness="1" BorderBrush="Red">
+            <Canvas Height="82" Width="252">
+                <TextBox BorderBrush="{x:Null}" BorderThickness="0" Height="30" Width="125" FontSize="18" VerticalContentAlignment="Center" Background="Transparent">倒计时</TextBox>
+                <TextBox BorderBrush="{x:Null}" BorderThickness="0" x:Name="textBox" Canvas.Top="30" Height="50" FontSize="35" Background="Transparent" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextWrapping="Wrap" Text="0" Width="150"/>
+                <Label x:Name="label" Content="分钟" Height="50" Width="100" FontSize="33" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Canvas.Left="150" Canvas.Top="30"/>
+            </Canvas>
+        </Border>
     </Grid>
 </Window>
