@@ -56,22 +56,15 @@ namespace MyTimer
 
         private void Grid_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
         {
-            int minute = 0;
-            //try
-            //{
-            //    minute = Convert.ToInt32(textBox.Text.Trim());
-            //}
-            //catch (Exception)
-            //{
-            //}
-            int result;
-            if (int.TryParse(textBox.Text.Trim(), out result))
-            {
-                minute = result;
-            }
-
             if (!isRunning)
             {
+                int minute = 0;
+                int result;
+                if (int.TryParse(textBox.Text.Trim(), out result))
+                {
+                    minute = result;
+                }
+
                 if (minute == 0 || minute > 999)
                 {
                     MessageBox.Show("别闹，好好填时间！");
