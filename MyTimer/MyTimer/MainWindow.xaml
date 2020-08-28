@@ -9,7 +9,7 @@
     <Grid Background="LightBlue" MouseDown="Grid_MouseDown" MouseRightButtonUp="Grid_MouseRightButtonUp">
         <Border BorderThickness="1" BorderBrush="Red">
             <Canvas Height="82" Width="252">
-                <TextBox BorderBrush="{x:Null}" BorderThickness="0" Height="30" Width="125" FontSize="18" VerticalContentAlignment="Center" Background="Transparent">倒计时</TextBox>
+                <TextBox x:Name="input" BorderBrush="{x:Null}" BorderThickness="0" Height="30" Width="210" FontSize="18" VerticalContentAlignment="Center" Background="Transparent">倒计时</TextBox>
                 <TextBox BorderBrush="{x:Null}" BorderThickness="0" x:Name="textBox" Canvas.Top="30" Height="50" FontSize="35" Background="Transparent" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextWrapping="Wrap" Text="0" Width="150"/>
                 <Label x:Name="label" Content="分钟" Height="50" Width="100" FontSize="33" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Canvas.Left="150" Canvas.Top="30"/>
             </Canvas>

@@ -30,6 +30,7 @@ namespace MyTimer
                 myTimer.Stop();
                 myTimer = null;
             }
+            input.Text = "倒计时";
             textBox.Text = "0";
             textBox.Width = 150;
             textBox.IsReadOnly = false;
