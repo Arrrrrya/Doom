@@ -1,0 +1,136 @@
+﻿<Window x:Class="PaymentRecorder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PaymentRecorder"
+        mc:Ignorable="d"
+        Title="记账本" Height="500" Width="800" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Canvas>
+            <Canvas x:Name="title" Height="80" Width="800" MouseDown="title_MouseDown">
+                <Label Content="Daily Cost Counter" Background="LightBlue" Height="50" Width="800" FontSize="25" FontFamily="楷体" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Label Content="Total：" Background="#FFC9E6F0" Height="30" Width="400" FontSize="20" FontFamily="楷体" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Canvas.Top="50"/>
+                <Label x:Name="totalCost" Content="0.00" Background="#FFC9E6F0" Height="30" Width="400" FontSize="20" FontFamily="楷体" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Canvas.Top="50" Canvas.Left="400"/>
+                <Button x:Name="btnAdd" Content="Add" Canvas.Left="635" Canvas.Top="50" Height="30" Width="75" Click="btnAdd_Click"/>
+                <Button x:Name="btnSave" Content="Save" Canvas.Left="720" Canvas.Top="50" Height="30" Width="75" Click="btnSave_Click"/>
+                <Canvas x:Name="miniBtn" Width="39.5" Height="20" Background="#FFB1CDC4" Canvas.Left="720" MouseDown="miniBtn_MouseLeftButtonUp">
+                    <Line X1="12" Y1="10" X2="28" Y2="10" Stroke="Gray"  StrokeThickness="3"/>
+                </Canvas>
+                <Border BorderBrush="Gray" BorderThickness="1" Height="20" Width="1" Canvas.Left="760"/>
+                <Canvas x:Name="closeBtn" Width="39.5" Height="20" Background="#FFB1CDC4" Canvas.Left="761" MouseDown="closeBtn_MouseLeftButtonUp">
+                    <Line X1="12" Y1="3" X2="28" Y2="17" Stroke="Gray"  StrokeThickness="3"/>
+                    <Line X1="12" Y1="17" X2="28" Y2="3" Stroke="Gray"  StrokeThickness="3"/>
+                </Canvas>
+                <Label Content="CopyRight        " Background="#FFC9E6F0" Foreground="SaddleBrown" Height="30" Width="800" FontSize="15" FontFamily="楷体" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Canvas.Top="470"/>
+                <TextBlock Canvas.Left="409" Canvas.Top="475">
+                    <Hyperlink FontSize="15" NavigateUri="https://mp.weixin.qq.com" Name="link" Click="link_Click">@很多鱼</Hyperlink>
+                </TextBlock>
+            </Canvas>
+            <Canvas Height="390" Width="800" Margin="0,80">
+                <DataGrid x:Name="dataGrid" HorizontalAlignment="Center" CanUserSortColumns="False" CanUserReorderColumns="False" VerticalAlignment="Center" Height="390" Width="800" AutoGenerateColumns="False" CanUserAddRows="False" SelectionUnit="Cell" BorderThickness ="0" Background="Transparent">
+                    <DataGrid.Style>
+                        <Style TargetType="DataGrid">
+                            <!--网格线颜色-->
+                            <Setter Property="CanUserResizeColumns" Value="false"/>
+                            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled"/>
+                            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+                            <Setter Property="HeadersVisibility" Value="Column"/>
+                            <Setter Property="HorizontalGridLinesBrush" Value="LightBlue"/>
+                            <Setter Property="VerticalGridLinesBrush" Value="LightBlue"/>
+                        </Style>
+                    </DataGrid.Style>
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <!--列标题样式-->
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="Height" Value="30" />
+                            <Setter Property="FontSize" Value="15" />
+                            <Setter Property="BorderThickness" Value="1"/>
+                            <Setter Property="BorderBrush" Value="LightBlue"/>
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+                    <DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <!--行样式-->
+                            <Setter Property="Height" Value="30" />
+                            <Setter Property="FontSize" Value="18" />
+                            <Setter Property="BorderThickness" Value="0.5"/>
+                            <Setter Property="BorderBrush" Value="LightBlue"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="White"/>
+                                </Trigger>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="White"/>
+                                    <Setter Property="Foreground" Value="Black"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGrid.RowStyle>
+                    <DataGrid.CellStyle>
+                        <!--单元格样式-->
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="Gray"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGrid.CellStyle>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Seq" Binding="{Binding seq_no}" Width="1*" CanUserResize="False" IsReadOnly="True">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextWrapping" Value="Wrap"/>
+                                    <Setter Property="FontSize" Value="15"/>
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Time" Binding="{Binding datetime}" Width="2*" CanUserResize="False" IsReadOnly="False">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextWrapping" Value="Wrap"/>
+                                    <Setter Property="FontSize" Value="15"/>
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Cost（￥）" Binding="{Binding payment}" Width="1.5*" CanUserResize="False" IsReadOnly="False">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextWrapping" Value="Wrap"/>
+                                    <Setter Property="FontSize" Value="15"/>
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Comment" Binding="{Binding comment}" Width="4*" CanUserResize="False" IsReadOnly="False">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextWrapping" Value="Wrap"/>
+                                    <Setter Property="FontSize" Value="15"/>
+                                    <Setter Property="HorizontalAlignment" Value="Left"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTemplateColumn Header="" Width="1*" CanUserResize="False" IsReadOnly="True" CanUserSort="False">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button FontSize="15" Click="Button_Click">Del</Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Canvas>
+        </Canvas>
+    </Grid>
+</Window>
