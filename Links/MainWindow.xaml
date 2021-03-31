@@ -1,0 +1,27 @@
+﻿<Window x:Class="Links.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Links" Height="460" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" Closing="Window_Closing">
+    <Grid Background="#FFC9E6F0" MouseDown="Grid_MouseDown">
+        <Canvas>
+            <Label Name="timeLabel" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom" Height="30" Width="264" Margin="15,0,0,0" Content=""/>
+        </Canvas>
+        <Canvas Margin="0,30,0,0">
+            <Label Content="靡不有初，鲜克有终。" HorizontalContentAlignment="Left" Height="30" Margin="15,0,0,0"/>
+        </Canvas>
+        <Canvas Margin="0,60,0,0">
+            <WrapPanel Name="panel1" Orientation="Vertical" Height="332" Width="122"/>
+            <WrapPanel Name="panel2" Orientation="Vertical" Height="332" Width="172" Canvas.Left="122"/>
+        </Canvas>
+        <Canvas Margin="0,392,0,0">
+            <Label Width="294" Height="30" HorizontalContentAlignment="Center">
+                <TextBlock FontSize="12">CopyRight 
+                <Hyperlink NavigateUri="">@Arya丶</Hyperlink>
+                </TextBlock>
+            </Label>
+        </Canvas>
+    </Grid>
+</Window>
